@@ -2,7 +2,6 @@ from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from app import models, schemas
 
-# ---------------- Wheel Spec CRUD ----------------
 def create_wheel_spec(db: Session, spec: schemas.WheelSpecCreate):
     existing_spec = db.query(models.WheelSpec).filter(models.WheelSpec.form_number == spec.formNumber).first()
     if existing_spec:
@@ -51,7 +50,6 @@ def get_wheel_specs(db: Session, formNumber: str = None):
     }
 
 
-# ---------------- Bogie Checksheet CRUD ----------------
 def create_bogie_checksheet(db: Session, data: schemas.BogieChecksheetCreate):
     existing = db.query(models.BogieChecksheet).filter(models.BogieChecksheet.form_number == data.formNumber).first()
     if existing:
