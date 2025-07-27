@@ -46,47 +46,88 @@ uvicorn main:app --reload
 API will run at:http://127.0.0.1:8000
 
 **API Endpoints**
+
+
 Method	Endpoint	Description
+
+
 POST	/api/forms/wheel-specifications	Create a wheel specification
+
+
 GET	/api/forms/wheel-specifications	Get all wheel specifications
+
+
 POST	/api/forms/bogie-checksheet	Create a bogie checksheet
 
 
 **Sample Requests**
+
 1. POST /api/forms/wheel-specifications
+
 {
+ 
   "formNumber": "WS123",
+ 
   "submittedBy": "John Doe",
+  
   "submittedDate": "2025-07-27",
+ 
   "fields": {
+   
     "additionalProp1": "value1",
+    
     "additionalProp2": "value2",
+    
     "additionalProp3": "value3"
+  
   }
+
 }
 
 
 2. GET /api/forms/wheel-specifications
+
 Returns a list of stored wheel specs.
 
+
 3. POST /api/forms/bogie-checksheet
+
 {
+
   "formNumber": "BC101",
+  
   "inspectionBy": "Jane Smith",
+  
   "inspectionDate": "2025-07-27",
+  
   "bogieDetails": {
+  
     "additionalProp1": "bogieDetail1",
+    
     "additionalProp2": "bogieDetail2",
+    
     "additionalProp3": "bogieDetail3"
+  
   },
+  
   "bogieChecksheet": {
+  
     "additionalProp1": "check1",
+    
     "additionalProp2": "check2",
+    
     "additionalProp3": "check3"
+  
   },
+  
+ 
   "bmbcChecksheet": {
+   
     "additionalProp1": "bmbc1",
+    
     "additionalProp2": "bmbc2",
+    
     "additionalProp3": "bmbc3"
+  
   }
 }
