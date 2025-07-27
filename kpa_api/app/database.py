@@ -10,7 +10,7 @@ engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
-# Dependency
+
 def get_db():
     db = SessionLocal()
     try:
@@ -18,10 +18,9 @@ def get_db():
     finally:
         db.close()
 
-# Create FastAPI app
 app = FastAPI()
 
-# ✅ Add CORS Middleware
+
 origins = [
     "http://localhost:3000",  # React or other frontend
     "http://127.0.0.1:3000",
@@ -36,7 +35,7 @@ app.add_middleware(
     allow_headers=["*"],        # Allow all headers
 )
 
-# Example Route
+
 @app.get("/")
 def read_root():
     return {"message": "CORS is enabled!"}
