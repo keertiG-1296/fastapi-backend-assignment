@@ -1,7 +1,6 @@
 from pydantic import BaseModel
 from typing import Dict
 
-# -------- Wheel Spec Schemas --------
 class WheelSpecBase(BaseModel):
     formNumber: str
     submittedBy: str
@@ -17,7 +16,7 @@ class WheelSpecResponse(BaseModel):
     data: Dict[str, str]
 
 
-# -------- Bogie Checksheet Schemas --------
+
 class BogieChecksheetBase(BaseModel):
     formNumber: str
     inspectionBy: str
